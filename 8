@@ -1,0 +1,1 @@
+Invoke-WebRequest -Uri "https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" -OutFile "$env:APPDATA\putty.exe";cd $env:APPDATA; Start-Process -FilePath "$env:APPDATA\putty.exe"
